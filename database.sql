@@ -115,7 +115,34 @@ BEGIN
 END
 GO
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- select dbo.fn_CalculateAge(getdate())
 
 
+create FUNCTION calculateAge(@userDate date)
+RETURNS  int
+AS
+BEGIN
+	
+	
+		-- Return the result of the function
+	RETURN  Datediff(YEAR, @userDate ,getdate())
+
+END
+GO
+
+
+select dbo.calculateAge('1/1/2000')
+
+
+select * from omar
+
+
+
+--------------------------
+
+alter view omar_view
+As
+SELECT  o.*,m.mobile,dbo.calculateAge(o.[date]) as AGE FROM Omar o
+ join [dbo].[mobile_numbers] m on o.ID=m.omar_id
