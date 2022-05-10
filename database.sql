@@ -1,3 +1,16 @@
+
+-- 1. Quey 
+-- DDL : creat table, drop , alter ....etc 
+-- DML : select,insert, update, delete ....etc
+
+-- 2. database view
+-- 3. database function
+-- 4. database stored procedure.
+
+
+-- Advanced :
+-- 1. Cursor.
+
 alter procedure sp_omar(@fname varchar(20))
 As 
 
@@ -86,3 +99,23 @@ FirstName !='test1'
 group by password
 having count(id) > 1
 order by password asc
+
+
+
+-- =============================================
+alter FUNCTION fn_CalculateAge(@DOB date)
+RETURNS  int
+AS
+BEGIN
+	
+	declare @age int = 22
+	-- Return the result of the function
+	RETURN @age
+
+END
+GO
+
+
+-- select dbo.fn_CalculateAge(getdate())
+
+
