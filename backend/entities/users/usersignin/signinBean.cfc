@@ -1,5 +1,5 @@
 
-component signinBean  {
+component signinBean accessors="TRUE"  {
 
 
     property name="ID" type="numeric" default="" ;
@@ -10,8 +10,6 @@ component signinBean  {
 	property name="DATE" type="string" default="";
 	property name="AGE" type="string" default="" ;
 
-	public struct function getDao(I){ 
-		return new trucksDao(sessionStruct);
-	}
+	
     
 }

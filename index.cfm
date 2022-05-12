@@ -15,12 +15,18 @@
          <cfinclude template="./frontend/entities/users/userlogin/userlogin.html" >
          <!--- END: login--->
          
+         <!--- BEGIN: Signin --->
+         <cfinclude template="./frontend/entities/users/userSignIn/userSignIn.html" >
+         <!--- END: Signin--->
+
          <!--- BEGIN: search --->
          <cfinclude template="./frontend/entities/users/usersgrid/usersgrid.html" >
          <!--- END: search--->
 
          <!--- BEGIN: script --->
          <script src="./frontend/entities/users/usersgrid/usersgrid.js"></script>
+         <script src="./frontend/entities/users/userSignIn/userSignIn.js"></script>
+
          <script src="./frontend/entities/users/userlogin/userlogin.js"></script>
          <!--- END: script--->
 

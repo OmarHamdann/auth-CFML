@@ -2,7 +2,7 @@ const login = () => {
   let userName = $("#username").val();
   let password = $("#password").val();
   $.ajax({
-    url: "backend/entities/users/usersgrid/userDao.cfc?method=auth",
+    url: "backend/entities/users/userlogin/loginFactory.cfc?method=auth",
     success: (result) => {
       var newResult = $.parseJSON(result);
 

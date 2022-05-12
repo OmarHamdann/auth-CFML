@@ -10,7 +10,6 @@ component userBean  {
 	property name="AGE" type="string" default="" ;
 
 
-    
-	
+  
     
 }

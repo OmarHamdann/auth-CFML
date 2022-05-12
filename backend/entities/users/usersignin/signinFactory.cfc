@@ -1,11 +1,25 @@
 
 
-component signinFactory  {
-    remote struct function createUser (string firstName,string lastName, string password,date date, string mobile) returnformat="JSON"
+component signinFactory output="false" returnformat="JSON"  returnType="any" securejson="false"  {
+    remote struct function createUser (ARGS) returnformat="JSON" verifyclient="false" securejson="false"
     { 
-        qry=new signinDao().insertUser(firstName,lastName,  password,date,  mobile ) ;
+
+        ARGS =  DeserializeJSON(ARGS);
+   
+        bean=new signinBean() ;
         
+
+
+	    bean.setFIRSTNAME(ARGS.FIRSTNAME);
+	    bean.setLASTNAME(ARGS.LASTNAME);
+	    bean.setPASSWORD(ARGS.PASSWORD);
+	    bean.setMOBILE(ARGS.MOBILE);
+	    bean.setDATE(ARGS.DATE);
         
+
+        // writeDump(bean)
+        // abort;
+        qry=new signinDao().insertUser(bean ) ;
         if(qry.recordcount)
         {
         return {message:"success",result:qry};
