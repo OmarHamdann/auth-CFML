@@ -1,15 +1,93 @@
 <html>
   <head>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <h1>Login</h1>
-    <h2 ></h2>
 
-    <input type="text" id="username" placeholder="Username" />
-    <input type="password" id="password" placeholder="Password" />
-    <button id="login">Login</button>
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Username"
+          />
+        </div>
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="password">Password</label>
+
+        <input
+          type="password"
+          class="form-control mb-2"
+          id="password"
+          placeholder="Password"
+        />
+      </div>
+      <button class="btn btn-primary mb-2" id="login">Login</button>
+    </div>
+
+    <h2></h2>
+
+    <hr />
+    <h1>Search User</h1>
+    <h3 class="alert  col-2"></h3>
+
+    <div class="form-inline">
+      <input
+        id="search"
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button id="search_user" class="btn btn-outline-success my-2 my-sm-0">
+        Search
+      </button>
+    </div>
+
+    <br />
+    <br />
+    
+
+    <table id="table" class="table table-bordered" border="1">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Password</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Date</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="id"></td>
+          <td id="firstName"></td>
+          <td id="lastName"></td>
+          <td id="passwordUser"></td>
+          <td id="phone"></td>
+          <td id="date"></td>
+          <td id="age"></td>
+        </tr>
+      </tbody>
+    </table>
+
     <script src="./app.js"></script>
   </body>
 </html>

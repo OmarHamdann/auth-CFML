@@ -18,10 +18,9 @@
 	// 	} 
 
 // }
-remote struct function auth(string name, string password) returnformat="JSON"
-{ 
+    remote struct function auth(string name, string password) returnformat="JSON"
+    { 
     return name;
-
-} 
+    } 
 }
 </cfscript>
