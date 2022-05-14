@@ -2,8 +2,16 @@ $("#table").hide();
 
 const searchUser = () => {
   let nameUser = $("#search").val();
+  var args = {
+    ARGS: JSON.stringify({
+      NAME: nameUser,
+    }),
+  };
+
   $.ajax({
     url: "backend/entities/users/usersgrid/userFactory.cfc?method=search",
+    type: "POST",
+    data: args,
     success: (result) => {
       var newResult = $.parseJSON(result);
 

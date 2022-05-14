@@ -1,9 +1,9 @@
 
 component userDao  {
     
-    public function searchMethod(string name) 
+    public function searchMethod(bean) 
     { 
-        qry=queryExecute("exec searchUser'#name#'");
+        qry=queryExecute("exec searchUser'#bean.name#'");
         return qry;
         // writeDump(arguments)
         // abort;
