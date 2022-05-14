@@ -1,8 +1,17 @@
 const login = () => {
   let userName = $("#username").val();
   let password = $("#password").val();
+
+  var args = {
+    ARGS: JSON.stringify({
+      NAME: userName,
+      PASSWORD: password,
+    }),
+  };
   $.ajax({
     url: "backend/entities/users/userlogin/loginFactory.cfc?method=auth",
+    type: "POST",
+    data: args,
     success: (result) => {
       var newResult = $.parseJSON(result);
 
