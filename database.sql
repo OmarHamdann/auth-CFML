@@ -1,4 +1,3 @@
-
 -- 1. Quey 
 -- DDL : creat table, drop , alter ....etc 
 -- DML : select,insert, update, delete ....etc
@@ -6,7 +5,6 @@
 -- 2. database view
 -- 3. database function
 -- 4. database stored procedure.
-
 
 -- Advanced :
 -- 1. Cursor.
@@ -69,8 +67,6 @@ ADD Email varchar(255);
 
 SELECT top 2 o.*,m.mobile FROM Omar o
  join [dbo].[mobile_numbers] m on o.ID=m.omar_id
-
-
 
 
 

@@ -1,8 +1,8 @@
 
 component loginDao  {
-    public function auth(string name, string password) 
+    public function auth(bean) 
     { 
-        qry=queryExecute("select * from Omar where FirstName='#name#' and password='#password#'");
+        qry=queryExecute("select * from Omar where FirstName='#bean.getUSERNAME()#' and password='#bean.getPASSWORD()#'");
         return(qry);
         // writeDump(arguments)
         // abort;

@@ -1,9 +1,19 @@
 component userFactory   {
 
     
-    remote struct function search(string name) returnformat="JSON"
+    remote struct function search(ARGS) returnformat="JSON"
     { 
-        qry=new userDao().searchMethod(name);
+
+
+        ARGS =  DeserializeJSON(ARGS);
+   
+        bean=new userBean() ;
+        
+
+
+	    bean.setFIRSTNAME(ARGS.NAME);
+
+        qry=new userDao().searchMethod(bean);
         
         if(qry.recordcount){
         return {message:"success",result:qry};

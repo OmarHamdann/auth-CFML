@@ -1,8 +1,17 @@
 const login = () => {
   let userName = $("#username").val();
   let password = $("#password").val();
+
+  var args = {
+    ARGS: JSON.stringify({
+      NAMEUSER: userName,
+      PASSWORD: password,
+    }),
+  };
   $.ajax({
     url: "backend/entities/users/userlogin/loginFactory.cfc?method=auth",
+    data: args,
+    async: true,
     success: (result) => {
       var newResult = $.parseJSON(result);
 
@@ -25,10 +34,6 @@ const login = () => {
     error: (err) => {
       $("h2").text("Ajax error");
       console.log(err.statusText);
-    },
-    data: {
-      NAME: userName,
-      PASSWORD: password,
     },
   });
 };

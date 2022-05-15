@@ -1,9 +1,20 @@
 
 
 component loginFactory  {
-    remote struct function auth(string name, string password) returnformat="JSON"
-    { 
-        qry=new loginDao().auth(name,password);
+    remote struct function auth(ARGS) returnformat="JSON"
+    {   
+        
+        ARGS =  DeserializeJSON(ARGS);
+        bean=new loginBean() ;
+       
+	    bean.setUSERNAME(ARGS.NAMEUSER);
+	    bean.setPASSWORD(ARGS.PASSWORD);
+        
+     
+
+
+
+        qry=new loginDao().auth(bean);
         
         // writeDump(arguments)
         // abort;
